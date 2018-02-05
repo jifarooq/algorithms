@@ -15,7 +15,7 @@ def most_living_people(persons):
   sorted_yrs = sorted(births.union(deaths))
 
   populations = {}
-  populations[sorted_yrs[0]] = 1
+  populations[sorted_yrs[0]] = 1  #earliest year must be a birth year
 
   for i, yr in enumerate(sorted_yrs):
     if i == 0:
