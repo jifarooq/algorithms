@@ -8,7 +8,6 @@ If a person was alive during any portion of that year, they should be included i
 For example, Person (birth= 1908, death= 1909) is included in the counts for both 1908 and 1909.
 '''
 
-
 # runs in O(P log P) time with P = number of people or year-pairs
 def most_living_people(year_pairs):
   births = set(map(lambda x:x[0], year_pairs))
@@ -32,7 +31,6 @@ class TestLivingPeople(unittest.TestCase):
   def test_normal_use_case(self):
     persons = [(1920, 1939), (1911, 1944), (1920, 1955), (1938, 1939)]
     self.assertEqual(most_living_people(persons), 1938)
-
 
 if __name__ == '__main__':
     unittest.main()
