@@ -9,22 +9,22 @@ For example, Person (birth= 1908, death= 1909) is included in the counts for bot
 '''
 
 # runs in O(P log P) time with P = number of people or year-pairs
-def most_living_people(year_pairs):
-  births = set(map(lambda x:x[0], year_pairs))
-  deaths = set(map(lambda x:x[1], year_pairs))
+def most_living_people(persons):
+  births = set(map(lambda y:y[0], persons))
+  deaths = set(map(lambda y:y[1], persons))
   sorted_yrs = sorted(births.union(deaths))
 
-  pops = {}
-  pops[sorted_yrs[0]] = 1
+  populations = {}
+  populations[sorted_yrs[0]] = 1
 
   for i, yr in enumerate(sorted_yrs):
     if i == 0:
       continue
     delta = 1 if (yr in births) else -1
     last = sorted_yrs[i - 1]
-    pops[yr] = pops[last] + delta
+    populations[yr] = populations[last] + delta
 
-  return max(pops, key=pops.get)
+  return max(populations, key=populations.get)
 
 
 class TestLivingPeople(unittest.TestCase):
