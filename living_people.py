@@ -12,17 +12,17 @@ For example, Person (birth= 1908, death= 1909) is included in the counts for bot
 def most_living_people(persons):
   births = set(map(lambda y:y[0], persons))
   deaths = set(map(lambda y:y[1], persons))
-  sorted_yrs = sorted(births.union(deaths))
+  sorted_years = sorted(births.union(deaths))
 
   populations = {}
-  populations[sorted_yrs[0]] = 1  #earliest year must be a birth year
+  populations[sorted_years[0]] = 1  #earliest year must be a birth year
 
-  for i, yr in enumerate(sorted_yrs):
+  for i, year in enumerate(sorted_years):
     if i == 0:
       continue
-    delta = 1 if (yr in births) else -1
-    last = sorted_yrs[i - 1]
-    populations[yr] = populations[last] + delta
+    delta = 1 if (year in births) else -1
+    last = sorted_years[i - 1]
+    populations[year] = populations[last] + delta
 
   return max(populations, key=populations.get)
 
