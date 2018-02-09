@@ -1,9 +1,9 @@
-import unittest
-
 '''
 Is Unique: Implement an algorithm to determine if a string has all unique characters.
 What if you cannot use additional data structures?
 '''
+
+import unittest
 
 # O(N) time complexity, O(N) space complexity
 def is_unique1(string):
