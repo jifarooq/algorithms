@@ -9,14 +9,14 @@ You can assume the string has only uppercase and lowercase letters (a - z).
 
 import unittest
 
-def compress(s):
+def compress(string):
   compressed = ''
   count = 1
 
-  for i, char in enumerate(s):
+  for i, char in enumerate(string):
     if i == 0:
       continue
-    prev_char = s[i - 1]
+    prev_char = string[i - 1]
 
     if char == prev_char:
       count += 1
@@ -25,7 +25,7 @@ def compress(s):
       count = 1
 
   compressed += char + str(count)
-  return compressed if len(compressed) < len(s) else s
+  return compressed if len(compressed) < len(string) else string
 
 
 class TestSubsets(unittest.TestCase):
