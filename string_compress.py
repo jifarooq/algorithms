@@ -10,22 +10,22 @@ You can assume the string has only uppercase and lowercase letters (a - z).
 import unittest
 
 def compress(s):
-	compressed = ''
-	count = 1
+  compressed = ''
+  count = 1
 
-	for i, char in enumerate(s):
-		if i == 0:
-			continue
-		prev_char = s[i - 1]
+  for i, char in enumerate(s):
+    if i == 0:
+      continue
+    prev_char = s[i - 1]
 
-		if char == prev_char:
-			count += 1
-		else:
-			compressed += prev_char + str(count)
-			count = 1
+    if char == prev_char:
+      count += 1
+    else:
+      compressed += prev_char + str(count)
+      count = 1
 
-	compressed += char + str(count)
-	return compressed if len(compressed) < len(s) else s
+  compressed += char + str(count)
+  return compressed if len(compressed) < len(s) else s
 
 
 class TestSubsets(unittest.TestCase):
