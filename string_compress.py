@@ -28,7 +28,7 @@ def compress(string):
   return compressed if len(compressed) < len(string) else string
 
 
-class TestSubsets(unittest.TestCase):
+class TestStringCompress(unittest.TestCase):
   def test_provided_example(self):
     self.assertEqual(compress('aabcccccaaa'), 'a2b1c5a3')
 
