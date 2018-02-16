@@ -17,7 +17,6 @@ def rand5():
 
 
 class TestRand7(unittest.TestCase):
-
   # Will fail about .083% of the time due to [pseudo] randomness!
   def test_equal_distribution_of_ints(self):
     # We can expect an average count of 126 for each number from 0 to 6
@@ -32,7 +31,6 @@ class TestRand7(unittest.TestCase):
 
     for j in range(0, 7):
       self.assertTrue(avg_count - deviation <= counts[j] <= avg_count + deviation)
-
 
 if __name__ == '__main__':
     unittest.main()
